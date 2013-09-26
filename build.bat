@@ -1,6 +1,8 @@
 setlocal enabledelayedexpansion
 setlocal EnableExtensions 
 
+SET SED=Tools\UnixUtils\sed.exe
+
 REM Fetching packages..	
 
 IF [%BUILD_NUMBER%] == [] (SET BUILD_NUMBER=0)
@@ -28,8 +30,8 @@ REM Creating nuget package..
 
 IF NOT EXIST Results MKDIR Results
 
-FOR /F %%I IN ('echo %EASYNETQDIR% ^|sed -e "s/EasyNetQ\.//"') DO SET VERSION=%%I
-FOR /F %%I IN ('echo %VERSION% ^|sed -e "s/\([0-9]\+\.[0-9]\+\.[0-9]\+\).*/\1/"') DO SET VERSION=%%I.%BUILD_NUMBER%
+FOR /F %%I IN ('echo %EASYNETQDIR% ^|%SED% -e "s/EasyNetQ\.//"') DO SET VERSION=%%I
+FOR /F %%I IN ('echo %VERSION% ^|%SED% -e "s/\([0-9]\+\.[0-9]\+\.[0-9]\+\).*/\1/"') DO SET VERSION=%%I.%BUILD_NUMBER%
 Tools\NuGet.exe pack Bundle\EasyNetQ.nuspec -OutputDirectory Results -BasePath Bundle -Version %VERSION%
 
 
