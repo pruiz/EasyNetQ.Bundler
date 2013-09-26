@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>EasyNetQ-Bundle</id>
+    <version>0.0.0.0</version>
+    <title>EasyNetQ (Bundle)</title>
+    <authors>Bundle by Pablo Ruiz. EasyNetQ by Mike Hadlow, Chris Edwards, A Hazelwood</authors>
+    <owners>Mike Hadlow</owners>
+    <licenseUrl>https://github.com/mikehadlow/EasyNetQ/blob/master/licence.txt</licenseUrl>
+    <projectUrl>http://easynetq.com/</projectUrl>
+    <iconUrl>https://raw.github.com/mikehadlow/EasyNetQ/gh-pages/design/logo_design.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A NuGet package of EasyNetQ with all dependencies bundled via ILRepack.</description>
+    <releaseNotes />
+    <copyright>Copyright Mike Hadlow 2012</copyright>
+    <tags>RabbitMQ Messaging AMQP</tags>
+  </metadata>
+</package>
